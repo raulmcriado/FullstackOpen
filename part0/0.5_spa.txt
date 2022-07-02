@@ -1,0 +1,29 @@
+#FULL STACK OPEN course
+
+#PART 0.5 SPA site
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-code (spa file)
+
+note over browser:
+Links in spa makes the browser to
+perform GET requests to download
+main.css and spa.js Js files
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: spa.js
+note over browser:
+The execution of spa.js makes the browser
+to retrieve the data.json file to parse
+all notes
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
+
+note over browser:
+Browser executes the event handler
+that renders notes to display the
+list of notes
+end note

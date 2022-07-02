@@ -1,0 +1,30 @@
+#FULL STACK OPEN course
+
+#PART 0.4 Add new note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+browser-->server: HTML-code (form data)
+server-->browser: Status Code 302 (url redirect)
+note over server:
+server add the new_note content to the list of notes and ask
+the browser to download again the page (302 redirect), where 
+the "notes" content was already updated
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{"content":"Hey!","date":"2022-07-01T17:42:38.896Z"} ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
