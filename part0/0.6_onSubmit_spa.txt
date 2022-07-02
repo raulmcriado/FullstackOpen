@@ -1,0 +1,9 @@
+#FULL STACK OPEN course
+
+#PART 0.6 SPA new note submit
+
+browser->browser: redraw notes with new note 
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+browser-->server: new_note_spa (note content, json)
+server-->browser: "note created" (json)
