@@ -1,4 +1,11 @@
 
+const Part  = (props) => {
+
+  return (
+    <p> {props.part} {props.numEx}</p>
+    )
+}
+
 
 const Header = (props) => {
   return (
@@ -12,21 +19,19 @@ const Content = (props) => {
   
   return(
     <div>
-      <p>{props.part1} {props.numEx1} </p>
-      <p>{props.part2} {props.numEx2} </p>
-      <p>{props.part2} {props.numEx3} </p>
+      <Part part={props.part1} numEx={props.numEx1}/>
+      <Part part={props.part2} numEx={props.numEx2}/>
+      <Part part={props.part3} numEx={props.numEx3}/>
     </div>
   )
 }
 
-const Total = (props) => {
-  
+const Total = (props) => {  
   return (
     <p>
       Number of exercises {props.numEx1+props.numEx2+props.numEx3}
     </p>
   )
-
 }
 
 const App = () => {
